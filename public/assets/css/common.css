@@ -1,0 +1,9 @@
+@CHARSET "utf-8";
+
+.table th, .table td {
+  border-top: none !important; 
+}
+
+.input-custom {
+  margin-bottom: 5px;
+}
