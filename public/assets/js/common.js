@@ -25,13 +25,14 @@ $(document).ready(function(){
         }
       },
       success: function(res, stt, err){
-        alert("SUCCESS");
+        custom_success_alert();
+
         $("input[name=nm]").val("");
         $("input[name=url]").val("");
         show();
       },
       error: function(res, stt, err){
-        alert("ERROR");
+        custom_error_alert();
       }
     });
   });
@@ -45,11 +46,11 @@ $(document).ready(function(){
       dataType: "json",
       timeout: 30000,
       success: function(res, stt, err){
-        alert("SUCCESS");
+        custom_success_alert();
         show();
       },
       error: function(res, stt, err){
-        alert("ERROR");
+        custom_error_alert();
       }
     });
   });
@@ -81,11 +82,11 @@ $(document).ready(function(){
                 dataType: "json",
                 timeout: 30000,
                 success: function(res, stt, err){
-                  alert("SUCCESS");
+                  custom_success_alert();
                   show();
                 },
                 error: function(res, stt, err){
-                  alert("ERROR");
+                  custom_error_alert();
                 }
               });
             });
@@ -94,8 +95,22 @@ $(document).ready(function(){
         }
       },
       error: function(res, stt, err){
-        alert("ERROR");
+        custom_error_alert();
       }
     });
+  }
+
+  function custom_success_alert() {
+    $(".alert-success").slideDown(500, function() {});
+    window.setTimeout(function() {
+      $(".alert-success").slideUp(500, function() {});
+    }, 1000);
+  }
+
+  function custom_error_alert() {
+    $(".alert-danger").slideDown(500, function() {});
+    window.setTimeout(function() {
+      $(".alert-danger").slideUp(500, function() {});
+    }, 1000);
   }
 });
